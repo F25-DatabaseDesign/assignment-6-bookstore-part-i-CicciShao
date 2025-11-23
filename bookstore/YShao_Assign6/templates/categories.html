@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="category-header">
+    <a href="/" class="home-button">Back to Home</a>
+</div>
+
+<div class="category-page-container">
+
+    <!-- LEFT SIDE: Category buttons -->
+    <div class="category-sidebar">
+        <h3>Categories</h3>
+
+        {% for c in categories %}
+            <p class="{% if c['id'] == categoryId %}selectedCategory{% else %}notSelectedCategory{% endif %}">
+                <a href="/category?cat={{ c['id'] }}">
+                    {{ c['name'] }}
+                </a>
+            </p>
+        {% endfor %}
+    </div>
+
+    <!-- RIGHT SIDE: Books in this category -->
+    <div class="books-display">
+
+        <h2>{{ categories[categoryId - 1]["name"] }}</h2>
+
+        {% for book in books %}
+            <div class="book-card">
+
+                <!-- Book Image -->
+                <img src="{{ url_for('static', filename='images/books/' + book['image']) }}"
+                     alt="{{ book['title'] }}"
+                     class="book-cover">
+
+                <div class="book-info">
+                    <h3>{{ book['title'] }}</h3>
+                    <p><strong>Author:</strong> {{ book['author'] }}</p>
+                    <p><strong>ISBN:</strong> {{ book['isbn'] }}</p>
+                    <p><strong>Price:</strong> ${{ '%.2f'|format(book['price']) }}</p>
+
+                    {% if book['readNow'] == 1 %}
+                        <p class="read-now">Read Now ✔</p>
+                    {% endif %}
+                </div>
+
+            </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}
