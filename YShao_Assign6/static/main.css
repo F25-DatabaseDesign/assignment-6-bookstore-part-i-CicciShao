@@ -1,0 +1,262 @@
+/* ============================
+   GLOBAL RESET + FONTS
+============================ */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", "Avenir", "Segoe UI", sans-serif;
+    background-color: #fffaf1; /* 温暖淡黄色 */
+    color: #5e4939;  /* 柔和棕色字体 */
+}
+
+/* 让标题更书卷味 */
+h1, h2, h3 {
+    font-family: "Georgia", "Times New Roman", serif;
+    color: #4a382b;
+}
+
+
+
+/* ============================
+        HEADER
+============================ */
+
+.site-header {
+    background-color: #ffeec6; /* 奶油淡黄 */
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f0d9a8;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;   /* 调整 logo 和标题之间的距离 */
+}
+
+
+.store-title {
+    font-size: 30px;
+    font-family: "Georgia", serif;
+    color: #3f2c1d;
+}
+
+
+/* ============================
+   DROPDOWN MENU
+============================ */
+
+.category-dropdown .dropdown-title {
+    cursor: pointer;
+    font-weight: bold;
+    color: #5a4637;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff7e3;
+    border: 1px solid #e6d3ad;
+    padding: 10px;
+    min-width: 150px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.category-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    color: #4a382b;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    color: #d08729;
+}
+
+
+
+/* ============================
+       INDEX PAGE
+============================ */
+
+
+
+.index-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 50px;
+}
+
+.store-description {
+    width: 45%;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.category-list {
+    width: 45%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.category-card {
+    text-align: center;
+}
+
+.category-image {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #f3dcae;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.category-name a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #744b22;
+}
+
+
+
+/* ============================
+        CATEGORY PAGE
+============================ */
+
+/* back to home */
+.category-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 40px;
+    margin-top: -20px; /* 往上提一些 */
+}
+
+.home-button {
+    background-color: #f7d18b;
+    color: #5c3b12;
+    padding: 10px 18px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.25s ease;
+    border: 2px solid #e8b865;
+}
+
+.home-button:hover {
+    background-color: #f0c16d;
+    transform: translateY(-2px);
+}
+
+
+/* main layout */
+.category-page-container {
+    display: flex;
+    gap: 40px;
+    padding: 30px 40px;
+    margin-top: -10px;
+}
+
+
+/* left sidebar */
+.category-sidebar h3 {
+    font-size: 22px;
+    color: #3b2814;
+    margin-bottom: 15px;
+}
+
+/* 未选中分类 */
+.notSelectedCategory a {
+    display: block;
+    padding: 10px 12px;
+    background: #fff3d6;
+    border: 1px solid #e3c699;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #5b4230;
+    margin-bottom: 10px;
+    transition: 0.2s ease;
+}
+
+.notSelectedCategory a:hover {
+    background: #ffe7b1;
+}
+
+/* 选中分类 */
+.selectedCategory a {
+    display: block;
+    padding: 10px 12px;
+    background: #f7d18b;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #4d3216;
+    border: 2px solid #e2b06e;
+}
+
+
+
+/* ============================
+          BOOK CARDS
+============================ */
+
+.book-card {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background: #fffaf0;
+    border-radius: 12px;
+    border: 1px solid #eedfb7;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+}
+
+.book-cover {
+    width: 150px;
+    border-radius: 8px;
+}
+
+.book-info h3 {
+    margin: 0;
+    font-size: 22px;
+    color: #3c2915;
+}
+
+.book-info p {
+    margin: 6px 0;
+    color: #6b563e;
+}
+
+.read-now {
+    color: #b37513;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+
+
+/* ============================
+          FOOTER
+============================ */
+
+.site-footer {
+    background-color: #ffefcd;
+    padding: 18px;
+    text-align: center;
+    color: #5a4637;
+    border-top: 2px solid #f0d9a8;
+    margin-top: 40px;
+}
